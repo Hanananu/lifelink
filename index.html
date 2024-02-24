@@ -1,0 +1,394 @@
+<!----<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db',3000) or die('connection failed');
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $date = $_POST['date'];
+
+   $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name','$email','$number','$date')") or die('query failed');
+
+   if($insert){
+      $message[] = 'appointment made successfully!';
+   }else{
+      $message[] = 'appointment failed';
+   }
+
+}
+?>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLink</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>Life</strong>Link </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#services">services</a>
+        <a href="#doctors">doctors</a>
+        <a href="#appointment">appointment</a>
+       
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image">
+        <img src="image/home-img.svg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>we take care of your healthy life</h3>
+        <p> Empowering you to live your healthiest life. We offer personalized care for all your needs, from routine checkups to complex conditions. Schedule an appointment today!</p>
+        <a href="#appointment" class="btn"> appointment us <span class="fas fa-chevron-right"></span> </a>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-user-md"></i>
+        <h3>150+</h3>
+        <p>doctors at work</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <h3>1030+</h3>
+        <p>satisfied patients</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-procedures"></i>
+        <h3>490+</h3>
+        <p>bed facility</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-hospital"></i>
+        <h3>70+</h3>
+        <p>available hospitals</p>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="image/about-img.svg" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Connecting You to the Best Healthcare, Wherever You Need It</h3>
+            <p>
+                At LifeLink, we're passionate about empowering you with the right care, right now. We connect you to a network of 70+ renowned hospitals across Kerala, each specializing in various areas of expertise. Whether you need routine checkups, specialized treatment for complex conditions, or anything in between, we're here to guide you towards the best possible outcome.
+            </p>
+            
+            
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>free checkups</h3>
+            <p>We give full body checkups for free! Available for first time customers.</p>
+            
+        </div>
+
+        <div class="box">
+            <i class="fas fa-ambulance"></i>
+            <h3>24/7 ambulance</h3>
+            <p>We're there for you at any time, anywhere.</p>
+            
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-md"></i>
+            <h3>expert doctors</h3>
+            <p>We have a group of expert doctors capable of curing severe diseases.</p>
+            
+        </div>
+
+        <div class="box">
+            <i class="fas fa-pills"></i>
+            <h3>medicines</h3>
+            <p>Our medicine collection is updated daily. From painkillers to cancer medicines, we got everything you want.</p>
+            
+        </div>
+
+        <div class="box">
+            <i class="fas fa-procedures"></i>
+            <h3>bed facility</h3>
+            <p>Hundreds of beds are always available for our patients. High quality and ergonomic.</p>
+            
+        </div>
+
+        <div class="box">
+            <i class="fas fa-syringe"></i>
+            <h3>lab tests</h3>
+            <p>We provide laboratory services for your needs. From typhoid to AIDS, we'll test and make you safe.</p>
+            
+        </div>
+
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>total care</h3>
+            <p>Our total care package ensures your well-being. A health assistant wil always be on your beck and call.</p>
+            
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+
+
+<!-- doctors section starts  -->
+
+<section class="doctors" id="doctors">
+
+    <h1 class="heading"> our <span>doctors</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="image/doc-1.jpg" alt="">
+            <h3>Dr. teena mathew</h3>
+            <span>Paediatrician</span>
+            <div class="share">
+            <a href="https://www.facebook.com/zuck/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/elonmusk" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/cristiano/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/today/author/williamhgates" class="fab fa-linkedin"></a>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-2.jpg" alt="">
+            <h3>Dr. Robin</h3>
+            <span>Cardiologist</span>
+            <div class="share">
+            <a href="https://www.facebook.com/zuck/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/elonmusk" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/cristiano/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/today/author/williamhgates" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-3.jpg" alt="">
+            <h3>Dr. Priya Varghese</h3>
+            <span>Ophthalmologist</span>
+            <div class="share">
+            <a href="https://www.facebook.com/zuck/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/elonmusk" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/cristiano/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/today/author/williamhgates" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-4.jpg" alt="">
+            <h3>Dr. Jiny John</h3>
+            <span>Orthopedic Surgeon</span>
+            <div class="share">
+            <a href="https://www.facebook.com/zuck/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/elonmusk" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/cristiano/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/today/author/williamhgates" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-5.jpg" alt="">
+            <h3>Dr. Max Wilton</h3>
+            <span>Neurologist</span>
+            <div class="share">
+            <a href="https://www.facebook.com/zuck/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/elonmusk" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/cristiano/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/today/author/williamhgates" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="image/doc-6.jpg" alt="">
+            <h3>Dr. Abraham Winson</h3>
+            <span>Psychiatrist</span>
+            <div class="share">
+            <a href="https://www.facebook.com/zuck/" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com/elonmusk" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/cristiano/" class="fab fa-instagram"></a>
+                <a href="https://www.linkedin.com/today/author/williamhgates" class="fab fa-linkedin"></a>
+            
+            </div>
+        </div>
+        
+
+    </div>
+
+</section>
+
+<!-- doctors section ends -->
+
+
+
+
+<!-- appointmenting section starts   -->
+
+<section class="appointment" id="appointment">
+
+    <h1 class="heading"> <span>appointment</span> now </h1>    
+
+    <div class="row">
+
+        <div class="image">
+            <img src="image/appointment-img.svg" alt="">
+        </div>
+
+        <form action="https://formsubmit.co/hanananu899@gmail.com" method="post">
+        <!-- <?php
+            if(isset($message)) {
+                foreach($message as $message) {
+                echo'<p class ="message">'.$message.'</p>';
+            }
+            }
+        ?> -->
+      
+            <h3>make appointment</h3>
+            <input type="text"name="name" placeholder="your name" class="box">
+            <input type="number"name="number" placeholder="your number" class="box">
+            <input type="email"name="email" placeholder="your email" class="box">
+            <input type="date"name="date" class="box">
+            <input type="submit" name="submit" value="appointment now" class="btn">
+        </form>
+
+    </div>
+
+</section>
+
+<!-- appointmenting section ends -->
+
+
+
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
+            <a href="#services"> <i class="fas fa-chevron-right"></i> services </a>
+            <a href="#doctors"> <i class="fas fa-chevron-right"></i> doctors </a>
+            <a href="#appointment"> <i class="fas fa-chevron-right"></i> appointment </a>
+           
+        </div>
+
+        <div class="box">
+            <h3>our services</h3>
+            <a> <i class="fas fa-chevron-right"></i> dental care </a>
+            <a> <i class="fas fa-chevron-right"></i> massage therapy </a>
+            <a> <i class="fas fa-chevron-right"></i> cardiology </a>
+            <a> <i class="fas fa-chevron-right"></i> diagnosis </a>
+            <a> <i class="fas fa-chevron-right"></i> ambulance service </a>
+        </div>
+
+        <div class="box">
+            <h3>appointment info</h3>
+            <a href="tel:+918952361527"> <i class="fas fa-phone"></i> +91 8952361527 </a>
+            <a href="tel:+916523547896"> <i class="fas fa-phone"></i> +91 6523547896 </a>
+            
+            <a href="mailto:lifelink@gmail.com"> <i class="fas fa-envelope"></i> lifelink@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Kerala, India </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            
+            
+            <a href="https://twitter.com/elonmusk"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="https://www.instagram.com/cristiano/"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="https://www.linkedin.com/today/author/williamhgates"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="https://www.pinterest.com/shopalexis/"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by <span>Anumol PP Teams</span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+<!-- js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
